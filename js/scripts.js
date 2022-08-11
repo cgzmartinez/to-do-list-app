@@ -1,13 +1,13 @@
-function newItem(){
+function newItem() {
 
   let li = $('<li></li>');
   let inputValue = $('#input').val();
   li.append(inputValue);
 
   if (inputValue === '') {
-    alert("You need to write something first!")
+    alert('You need to write something first!');
   } else {
-    $('#list').append(li);
+    $("#list").append(li);
   }
 
   function crossOut() {
@@ -18,15 +18,14 @@ function newItem(){
     li.toggleClass("strike");
   });
 
-    let crossOutButton = $('<crossOutButton></crossOutButton>');
+  let crossOutButton = $("<crossOutButton></crossOutButton>");
+  crossOutButton.append(document.createTextNode("X"));
+  li.append(crossOutButton);
 
-    crossOutButton.append(document.createTextNode("X"));
-    li.append(crossOutButton);
-
-    crossOutButton.on("click", deleteListItem);
-      function deleteListItem() {
-        li.addClass("delete");
-      }
+  crossOutButton.on("click", deleteListItem);
+  function deleteListItem() {
+      li.addClass("delete")
+  }
 
       $('#list').sortable();
   }
