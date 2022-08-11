@@ -2,23 +2,24 @@ function newItem(){
 
   let li = $('<li></li>');
   let inputValue = $('#input').val();
-  li.appendChild(inputValue);
+  li.append(inputValue);
 
   if (inputValue === '') {
     alert("You need to write something first!")
   } else {
-    $('#list').appendChild(li);
+    $('#list').append(li);
   }
 
   function crossOut() {
     li.toggleClass("strike");
   }
 
-  li.on("dbclick", function crossOut() {
+  li.on("dblclick", function crossOut() {
     li.toggleClass("strike");
   });
 
-    let crossOutButton = $("<crossOutButton></crossOutButton");
+    let crossOutButton = $('<crossOutButton></crossOutButton>');
+
     crossOutButton.append(document.createTextNode("X"));
     li.append(crossOutButton);
 
@@ -30,7 +31,7 @@ function newItem(){
       $('#list').sortable();
   }
 
-  
+
 // Javascript
 
 // Adds new item to list of items
